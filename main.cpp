@@ -53,6 +53,39 @@ int main(){
 						vRadical.push_back(temporal);
 						break;
 					}
+					case 3:{
+						bool seguir2 = true;
+						while (seguir2 == true) {
+							int resp2;
+							cout << "---Menu---" << endl;
+							cout << "1) Sumar" << endl;
+							cout << "2) Restar" << endl;
+							cout << "3) Multiplicar" << endl;
+							cout << "4) Dividir" << endl;
+							cout << "5) Salir" << endl;
+							cin >> resp2;
+							while (resp2 < 1 || resp2 > 5) {
+								cout << "Opcion invalida! Ingrese su opcion de nuevo!" << endl;
+								cin >> resp2;
+							}
+							if (resp2 == 1)
+							{
+								/* code */
+							} else if (resp2 == 2)
+							{
+								/* code */
+							} else if (resp3 == 3)
+							{
+								/* code */
+							} else if (resp4 == 4)
+							{
+								/* code */
+							} else {
+								seguir2 = false;
+							}
+						}
+						break;
+					}
 				}
 				break;
 			}

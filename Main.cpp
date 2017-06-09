@@ -14,21 +14,27 @@ int main() {
 	while (seguir == true) {
 		int resp;
 		cout << "---Menu---" << endl;
-		cout << "1) Crear Binario" << endl;
-		cout << "2) Disyuncion" << endl;
-		cout << "3) Conjuncion " << endl;
-		cout << "4) Implicacion " << endl;
-		cout << "5) Doble Implicacion " << endl;
-		cout << "6) Disyuncion Exclusiva" << endl;
-		cout << "7) Salir" << endl;
+		cout << "1) Agregar" << endl;
+		cout << "2) Listar" << endl;
+		cout << "3) Operaciones" << endl;
+		cout << "4) Salir" << endl;
 		cin >> resp;
-		while (resp < 1 || resp > 7) {
+		while (resp < 1 || resp > 4) {
 			cout << "Opcion invalida! Ingrese su opcion de nuevo!" << endl;
 			cin >> resp;
 		}
-		if ()
+		if (resp == 1)
 		{
 			/* code */
+		} else if (resp == 2)
+		{
+			/* code */
+		} else if (resp == 3)
+		{
+			
+		} else {
+			cout << "Nos vemos!" << endl;
+			seguir = false;
 		}
 
 	}

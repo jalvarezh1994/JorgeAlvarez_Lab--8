@@ -1,8 +1,8 @@
-Main: Main.o Real.o Racional.o Radical.o
-	g++ Main.o Real.o Racional.o Radical.o -o main
+main: main.o Real.o Racional.o Radical.o
+	g++ main.o Real.o Racional.o Radical.o -o main
 
-Main.o: Main.cpp Real.h Racional.h Radical.h
-	g++ -c Main.cpp
+main.o: main.cpp Real.h Racional.h Radical.h
+	g++ -c main.cpp
 
 Real.o: Real.h Real.cpp
 	g++ -c Real.cpp
