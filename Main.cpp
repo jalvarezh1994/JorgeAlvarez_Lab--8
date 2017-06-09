@@ -16,7 +16,7 @@ int main() {
 	//a+b;
 	//cout<<c+5<<endl;
 	Radical a(5,2,8);
-	Radical b(10,2,8);
-	cout<<a+b<<endl;
+	Radical b(10,7,8);
+	cout<<a/b<<endl;
 	return 0;
 }

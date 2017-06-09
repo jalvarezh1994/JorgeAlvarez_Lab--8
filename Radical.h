@@ -62,10 +62,25 @@ class Radical:public Real{
                 respuesta+='('+to_string(this->getCoeficiente()*r1.getCoeficiente())+")("+
                 to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice()*r1.getIndice())+')';
             }else{
-                respuesta+='('+to_string(this->getCoeficiente*r1.getCoeficiente());
+                respuesta+='('+to_string(this->getCoeficiente()*r1.getCoeficiente())+")(("+to_string(this->getRadicando())+
+                ")^(1/"+to_string(this->getRadicando())+"))(("+to_string(r1.getCoeficiente())+")^(1/"+to_string(r1.getIndice())+"))";
             }
+            return respuesta;
         }
 
+        string operator /(Radical &r1){
+            string respuesta="";
+            int denom=this->getIndice()*r1.getIndice();
+            string indice=to_string(this->getIndice()/denom+r1.getIndice()/denom);
+            if (this->getRadicando()==r1.getRadicando()){
+                respuesta+='('+to_string(this->getCoeficiente())+'/'+to_string(r1.getCoeficiente())+')'+
+                '('+to_string(this->getRadicando())+")^("+indice+')';
+            }else{
+                respuesta+="(("+to_string(this->getCoeficiente)+")("+to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice())+"))"+'/'+
+                "(("+to_string(r1.getCoeficiente)+")("+to_string(r1.getRadicando())+")^(1/"+to_string(r1.getIndice())+"))";
+            }
+            return respuesta;
+        }
 };
 
 #endif
