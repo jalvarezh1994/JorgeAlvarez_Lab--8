@@ -9,35 +9,11 @@
 using namespace std;
 
 int main() {
-	vector<Real*> numeros;
-	bool seguir = true;
-	while (seguir == true) {
-		int resp;
-		cout << "---Menu---" << endl;
-		cout << "1) Agregar" << endl;
-		cout << "2) Listar" << endl;
-		cout << "3) Operaciones" << endl;
-		cout << "4) Salir" << endl;
-		cin >> resp;
-		while (resp < 1 || resp > 4) {
-			cout << "Opcion invalida! Ingrese su opcion de nuevo!" << endl;
-			cin >> resp;
-		}
-		if (resp == 1)
-		{
-			/* code */
-		} else if (resp == 2)
-		{
-			/* code */
-		} else if (resp == 3)
-		{
-			
-		} else {
-			cout << "Nos vemos!" << endl;
-			seguir = false;
-		}
-
-	}
-
+	Racional* a=new Racional(1,2);
+	Racional* b=new Racional(3,4);
+	Racional c(1,2);
+	Racional d(3,4);
+	//a+b;
+	cout<<c+5<<endl;
 	return 0;
 }
