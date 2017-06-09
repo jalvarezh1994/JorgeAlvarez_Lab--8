@@ -92,8 +92,6 @@ class Racional:public Real{
             return respuesta;
         }
 
-//-----------------------------------
-
         string operator +(Radical &r1){
             string resp="";
             int coeficienteT = Denominador * r1.getCoeficiente();

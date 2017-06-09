@@ -9,6 +9,12 @@
 using namespace std;
 
 int main(){
+	ofstream archivo;
+	archivo.open("operaciones.txt".c_str(),ios::app);
+	if (archivo.fail()){
+		cout<<"No se puede abrir el archivo";
+		exit(1);
+	}
 	vector<Real*> numeros;
 	int opcMenu, cont = 1;
 	do{
@@ -164,11 +170,21 @@ int main(){
 									Racional* temp2 = dynamic_cast<Racional*>(numeros[resp5]);
 									respF = *temp1 + temp2;
 									cout << "La respuesta es: " << respF << endl;
+									string imprimir += cont + ") (" + to_string(temp1 -> getNumerador()) + " / " + to_string(temp1 -> getNumerador()) + ") + (" 
+									+ to_string(temp2 -> getNumerador()) + " / " + to_string(temp2 -> getDenominador()) + ") = " + respF;
+									archivo << imprimir;
+									archivo << endl;
+									cont++;
 								} else {
 									Racional* temp1 = dynamic_cast<Racional*>(numeros[resp4]);
 									Radical* temp2 = dynamic_cast<Radical*>(numeros[resp5]);
 									respF = *temp1 + temp2;
 									cout << "La respuesta es: " << respF << endl;
+									string imprimir += cont + ") (" + to_string(temp1 -> getNumerador()) + " / " + to_string(temp1 -> getNumerador()) + ") + (" 
+									+ to_string(temp2 -> getCoeficiente()) + ")(" + to_string(temp2 -> getRadicando()) + ")^(1/" + to_string(temp2 -> getIndice()) + ") = " + respF;
+									archivo << imprimir;
+									archivo << endl;
+									cont++;
 								}
 							} else {
 								if (numeros[resp5] -> getTipo() == "Radical")
@@ -177,6 +193,11 @@ int main(){
 									Radical* temp2 = dynamic_cast<Radical*>(numeros[resp5]);
 									respF = *temp1 + temp2;
 									cout << "La respuesta es: " << respF << endl;
+									string imprimir += cont + ") (" + to_string(temp1 -> getNumerador()) + " / " + to_string(temp1 -> getNumerador()) + ") + (" 
+									+  + ") = " + respF;
+									archivo << imprimir;
+									archivo << endl;
+									cont++;
 								} else {
 									Radical* temp1 = dynamic_cast<Radical*>(numeros[resp4]);
 									Racional* temp2 = dynamic_cast<Racional*>(numeros[resp5]);
@@ -510,4 +531,5 @@ int main(){
 			}
 		}
 	}while(opcMenu!=8);
+	archivo.close();
 }
