@@ -10,6 +10,7 @@ class Real{
     protected:
     public:
         Real();
+        virtual string getTipo() = 0;
 };
 
 #endif

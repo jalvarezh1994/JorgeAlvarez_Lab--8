@@ -12,6 +12,7 @@ class Radical:public Real{
         int Coeficiente;
         int Indice;
         int Radicando;
+        string tipo;
         
     public:
         Radical(int,int,int);
@@ -24,6 +25,8 @@ class Radical:public Real{
 
         int getRadicando();
         void setRadicando(int);
+
+        string getTipo();
 
 };
 

@@ -11,6 +11,7 @@ class Racional:public Real{
     protected:
         int Numerador;
         int Denominador;
+        string tipo;
     public:
         Racional(int,int);
         Racional();
@@ -20,6 +21,7 @@ class Racional:public Real{
         int getDenominador();
         void setDenominador(int);
 
+        string getTipo();
 };
 
 #endif

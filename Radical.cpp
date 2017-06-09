@@ -4,6 +4,7 @@ Radical::Radical(int Coeficiente,int Indice,int Radicando){
     this->Coeficiente=Coeficiente;
     this->Indice=Indice;
     this->Radicando=Radicando;
+    tipo = "Radical";
 }
 
 Radical::Radical(){
@@ -32,4 +33,8 @@ void Radical::setRadicando(int Radicando){
 
 int Radical::getRadicando(){
    return Radicando;
+}
+
+string Radical::getTipo() {
+	return tipo;
 }
