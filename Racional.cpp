@@ -3,6 +3,7 @@
 Racional::Racional(int Numerador,int Denominador){
     this->Numerador=Numerador;
     this->Denominador=Denominador;
+    tipo = "Racional";
 }
 
 Racional::Racional(){
@@ -23,4 +24,8 @@ void Racional::setDenominador(int Denominador){
 
 int Racional::getDenominador(){
    return Denominador;
+}
+
+string Racional::getTipo() {
+	return tipo;
 }

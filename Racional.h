@@ -12,6 +12,7 @@ class Racional:public Real{
     protected:
         int Numerador;
         int Denominador;
+        string tipo;
     public:
         Racional(int,int);
         Racional();
@@ -21,6 +22,7 @@ class Racional:public Real{
         int getDenominador();
         void setDenominador(int);
 
+        string getTipo();
 
         string operator +(Racional &r1){
             int denominador=(r1.getDenominador())*(this->getDenominador());
