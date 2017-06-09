@@ -33,11 +33,37 @@ class Radical:public Real{
             int indice,radicando,coeficiente;
             if (this->getRadicando()==r1.getRadicando()&&this->getIndice()==r1.getIndice()){
                 respuesta+='('+to_string(this->getCoeficiente()+r1.getCoeficiente())+')'+'('+to_string(this->getRadicando())
-                +")^(1/"+to_string(this->getRadicando());
+                +")^(1/"+to_string(this->getIndice())+')';
             }else{
-                respuesta+='('+to_string(this->getCoeficiente());
+                respuesta+=
+                '('+to_string(this->getCoeficiente())+")("+to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice())+')'+'+'+
+                '('+to_string(r1.getCoeficiente())+")("+to_string(r1.getRadicando())+")^(1/"+to_string(r1.getIndice())+')';
             }
             return respuesta;
+        }
+
+        string operator -(Radical &r1){
+            string respuesta="";
+            int indice,radicando,coeficiente;
+            if (this->getRadicando()==r1.getRadicando()&&this->getIndice()==r1.getIndice()){
+                respuesta+='('+to_string(this->getCoeficiente()-r1.getCoeficiente())+')'+'('+to_string(this->getRadicando())
+                +")^(1/"+to_string(this->getIndice())+')';
+            }else{
+                respuesta+=
+                '('+to_string(this->getCoeficiente())+")("+to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice())+')'+'-'+
+                '('+to_string(r1.getCoeficiente())+")("+to_string(r1.getRadicando())+")^(1/"+to_string(r1.getIndice())+')';
+            }
+            return respuesta;
+        }        
+
+        string operator *(Radical &r1){
+            string respuesta="";
+            if (this->getRadicando()==r1.getRadicando()){
+                respuesta+='('+to_string(this->getCoeficiente()*r1.getCoeficiente())+")("+
+                to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice()*r1.getIndice())+')';
+            }else{
+                respuesta+='('+to_string(this->getCoeficiente*r1.getCoeficiente());
+            }
         }
 
 };
