@@ -9,7 +9,6 @@
 using namespace std;
 
 int main(){
-	vector<Real> vReal;
 	vector<Racional> vRacional;
 	vector<Radical> vRadical;
 	int opcMenu;
@@ -29,30 +28,24 @@ int main(){
 		switch(opcMenu){
 			case 1:{
 				cout<<"Menú agregar"<<endl;
-				cout<<"1. Real"<<endl;
-				cout<<"2. Racional"<<endl;
-				cout<<"3. Radical"<<endl;
+				cout<<"1. Racional"<<endl;
+				cout<<"2. Radical"<<endl;
 				int opcAgregar;
 				cout<<"Ingrese la opción: ";
 				cin>>opcAgregar;
 				switch(opcAgregar){
 					case 1:{
-						Real temporal();
-						vReal.push_back(temporal);
-						break;
-					}
-					case 2:{
 						int numerador;
 						cout<<"Ingrese numerador: ";
 						cin>>numerador;
 						int denominador;
 						cout<<"Ingrese denominador: ";
 						cin>>denominador;
-						Racional temporal(numeradordenominador);
+						Racional temporal(numerador,denominador);
 						vRacional.push_back(temporal);
 						break;
 					}
-					case 3:{
+					case 2:{
 						int coeficiente;
 						cout<<"Ingrese coeficiente: ";
 						cin>>coeficiente;
@@ -62,7 +55,7 @@ int main(){
 						int radicando;
 						cout<<"Ingrese radicando: ";
 						cin>>radicando;
-						Radical temporal(coeficienteindiceradicando);
+						Radical temporal(coeficiente,indice,radicando);
 						vRadical.push_back(temporal);
 						break;
 					}
@@ -72,33 +65,28 @@ int main(){
 			case 2:
 			{
 				cout<<"Menú listar"<<endl;
-				cout<<"1. Real"<<endl;
-				cout<<"2. Racional"<<endl;
-				cout<<"3. Radical"<<endl;
+				cout<<"1. Racional"<<endl;
+				cout<<"2. Radical"<<endl;
 				int opcListar;
 				cout<<"Ingrese la opción: ";
 				cin>>opcListar;
 				switch(opcListar){
-					case 1:
-					for(int i=0;i<vReal.size();i++){
-						cout<<endl;
-
-					}break;
-					case 2:
-					for(int i=0;i<vRacional.size();i++){
-						cout<<"Numerador"<<" = "<<vRacional[i].getNumerador();
-						cout<<"Denominador"<<" = "<<vRacional[i].getDenominador();
-						cout<<endl;
-
-					}break;
-					case 3:
-					for(int i=0;i<vRadical.size();i++){
-						cout<<"Coeficiente"<<" = "<<vRadical[i].getCoeficiente();
-						cout<<"Indice"<<" = "<<vRadical[i].getIndice();
-						cout<<"Radicando"<<" = "<<vRadical[i].getRadicando();
-						cout<<endl;
-
-					}break;
+					case 1:{
+						for(int i=0;i<vRacional.size();i++){
+							cout<<"Numerador"<<" = "<<vRacional[i].getNumerador();
+							cout<<"Denominador"<<" = "<<vRacional[i].getDenominador();
+							cout<<endl;
+						}
+						break;
+					}
+					case 2:{
+						for(int i=0;i<vRadical.size();i++){
+							cout<<"Coeficiente"<<" = "<<vRadical[i].getCoeficiente();
+							cout<<"Indice"<<" = "<<vRadical[i].getIndice();
+							cout<<"Radicando"<<" = "<<vRadical[i].getRadicando();
+							cout<<endl;
+						}break;
+					}
 				}
 				break;
 			}

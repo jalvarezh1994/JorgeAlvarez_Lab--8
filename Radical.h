@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "Real.h"
 
 using namespace std;
 
@@ -11,6 +12,7 @@ class Radical:public Real{
         int Coeficiente;
         int Indice;
         int Radicando;
+        
     public:
         Radical(int,int,int);
         Radical();
