@@ -16,12 +16,6 @@ int main(){
 		cout<<"Menú"<<endl;
 		cout<<"1. Agregar"<<endl;
 		cout<<"2. Listar"<<endl;
-		cout<<"3. Modificar"<<endl;
-		cout<<"4. Eliminar"<<endl;
-		cout<<"5. Guardar en archivos de texto"<<endl;
-		cout<<"6. Leer de archivos de texto"<<endl;
-		cout<<"7. Guardar en binarios"<<endl;
-		cout<<"7. Leer de binarios"<<endl;
 		cout<<"8. Salir"<<endl;
 		cout<<"Ingrese opción: "<<endl;
 		cin>>opcMenu;
@@ -73,30 +67,23 @@ int main(){
 				switch(opcListar){
 					case 1:{
 						for(int i=0;i<vRacional.size();i++){
-							cout<<"Numerador"<<" = "<<vRacional[i].getNumerador();
-							cout<<"Denominador"<<" = "<<vRacional[i].getDenominador();
+							cout<<i<<".-"<<endl;
+							cout<<"Numerador"<<" = "<<vRacional[i].getNumerador()<<endl;
+							cout<<"Denominador"<<" = "<<vRacional[i].getDenominador()<<endl;
 							cout<<endl;
 						}
 						break;
 					}
 					case 2:{
 						for(int i=0;i<vRadical.size();i++){
-							cout<<"Coeficiente"<<" = "<<vRadical[i].getCoeficiente();
-							cout<<"Indice"<<" = "<<vRadical[i].getIndice();
-							cout<<"Radicando"<<" = "<<vRadical[i].getRadicando();
+							cout<<i<<".-"<<endl;
+							cout<<"Coeficiente"<<" = "<<vRadical[i].getCoeficiente()<<endl;
+							cout<<"Indice"<<" = "<<vRadical[i].getIndice()<<endl;
+							cout<<"Radicando"<<" = "<<vRadical[i].getRadicando()<<endl;
 							cout<<endl;
 						}break;
 					}
 				}
-				break;
-			}
-			case 3:{
-				break;
-			}
-			case 4:{
-				break;
-			}
-			case 5:{
 				break;
 			}
 		}
