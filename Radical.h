@@ -25,6 +25,19 @@ class Radical:public Real{
         int getRadicando();
         void setRadicando(int);
 
+        string operator +(Radical &r1){
+            string respuesta="";
+            int indice,radicando,coeficiente;
+            if (this->getRadicando()==r1.getRadicando()&&this->getIndice()==r1.getIndice()){
+                respuesta+='('+to_string(this->getCoeficiente()+r1.getCoeficiente())+')'+'('+to_string(this->getRadicando())
+                +")^(1/"+to_string(this->getRadicando());
+            }else{
+                respuesta+='('+to_string(this->getCoeficiente());
+            }
+            return respuesta;
+        }
+
+
 };
 
 #endif
