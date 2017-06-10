@@ -89,12 +89,12 @@ int main(){
 				bool seguir2 = true;
 				while (seguir2 == true) {
 					int resp2;
-					cout << "---Menu---"  <<  endl;
-					cout << "1) Sumar"  <<  endl;
-					cout << "2) Restar"  <<  endl;
-					cout << "3) Multiplicar"  <<  endl;
-					cout << "4) Dividir"  <<  endl;
-					cout << "5) Salir"  <<  endl;
+					cout << "---Menu---" << endl;
+					cout << "1) Sumar" << endl;
+					cout << "2) Restar" << endl;
+					cout << "3) Multiplicar" << endl;
+					cout << "4) Dividir" << endl;
+					cout << "5) Salir" << endl;
 					cin >> resp2;
 					while (resp2 < 1 || resp2 > 5) {
 						cout << "Opcion invalida! Ingrese su opcion de nuevo!"  <<  endl;
@@ -110,7 +110,7 @@ int main(){
 							if (numeros[i] -> getTipo() == "Racional")
 							{
 								Racional* temp = dynamic_cast<Racional*>(numeros[i]);
-								cout << i << ") " <<  temp -> getNumerador() << "/" << temp -> getDenominador() << endl;
+								cout << i << ") " << temp -> getNumerador() << "/" << temp -> getDenominador() << endl;
 							} else {
 								Radical* temp = dynamic_cast<Radical*>(numeros[i]);
 								cout << i << ") (" << temp -> getCoeficiente() << ")(" << temp -> getRadicando() << ")^(1/" << temp -> getIndice() << ")" <<  endl;
@@ -127,7 +127,7 @@ int main(){
 						cout << "Desea escoger un numero del banco o ingresarlo?" << endl;
 						cout << "1) Escoger" << endl;
 						cout << "2) Ingresar" << endl;
-						int resp3
+						int resp3;
 						cin >> resp3;
 						while (resp3 < 1 || resp3 > 2) {
 							cout << "Opcion invalida! Ingrese su opcion de nuevo!"  <<  endl;
@@ -170,9 +170,14 @@ int main(){
 									Racional* temp2 = dynamic_cast<Racional*>(numeros[resp5]);
 									respF = *temp1 + temp2;
 									cout << "La respuesta es: " << respF << endl;
-									string imprimir += cont + ") (" + to_string(temp1 -> getNumerador()) + " / " + to_string(temp1 -> getNumerador()) + ") + (" 
-									+ to_string(temp2 -> getNumerador()) + " / " + to_string(temp2 -> getDenominador()) + ") = " + respF;
-									archivo << imprimir;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") + (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
 									archivo << endl;
 									cont++;
 								} else {
@@ -180,9 +185,14 @@ int main(){
 									Radical* temp2 = dynamic_cast<Radical*>(numeros[resp5]);
 									respF = *temp1 + temp2;
 									cout << "La respuesta es: " << respF << endl;
-									string imprimir += cont + ") (" + to_string(temp1 -> getNumerador()) + " / " + to_string(temp1 -> getNumerador()) + ") + (" 
-									+ to_string(temp2 -> getCoeficiente()) + ")(" + to_string(temp2 -> getRadicando()) + ")^(1/" + to_string(temp2 -> getIndice()) + ") = " + respF;
-									archivo << imprimir;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") + (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
 									archivo << endl;
 									cont++;
 								}
@@ -193,9 +203,14 @@ int main(){
 									Radical* temp2 = dynamic_cast<Radical*>(numeros[resp5]);
 									respF = *temp1 + temp2;
 									cout << "La respuesta es: " << respF << endl;
-									string imprimir += cont + ") (" + to_string(temp1 -> getNumerador()) + " / " + to_string(temp1 -> getNumerador()) + ") + (" 
-									+  + ") = " + respF;
-									archivo << imprimir;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") + (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
 									archivo << endl;
 									cont++;
 								} else {
@@ -203,6 +218,16 @@ int main(){
 									Racional* temp2 = dynamic_cast<Racional*>(numeros[resp5]);
 									respF = *temp1 + temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") + (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								}
 							}
 						} else {
@@ -211,10 +236,30 @@ int main(){
 								Racional* temp1 = dynamic_cast<Racional*>(numeros[resp4]);
 								respF = *temp1 + num2;
 								cout << "La respuesta es: " << respF << endl;
+								archivo << cont;
+								archivo << ") (";
+								archivo << temp1;
+								archivo << ") + (";
+								archivo << num2;
+								archivo << ") = (";
+								archivo << respF;
+								archivo << ")";
+								archivo << endl;
+								cont++;
 							} else {
 								Radical* temp1 = dynamic_cast<Radical*>(numeros[resp4]);
 								respF = *temp1 + num2;
 								cout << "La respuesta es: " << respF << endl;
+								archivo << cont;
+								archivo << ") (";
+								archivo << temp1;
+								archivo << ") + (";
+								archivo << num2;
+								archivo << ") = (";
+								archivo << respF;
+								archivo << ")";
+								archivo << endl;
+								cont++;
 							}
 						}
 					} else if (resp2 == 2)
@@ -287,11 +332,31 @@ int main(){
 									Racional* temp2 = dynamic_cast<Racional*>(numeros[resp5]);
 									respF = *temp1 - temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") - (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								} else {
 									Racional* temp1 = dynamic_cast<Racional*>(numeros[resp4]);
 									Radical* temp2 = dynamic_cast<Radical*>(numeros[resp5]);
 									respF = *temp1 - temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") - (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								}
 							} else {
 								if (numeros[resp5] -> getTipo() == "Radical")
@@ -300,11 +365,31 @@ int main(){
 									Radical* temp2 = dynamic_cast<Radical*>(numeros[resp5]);
 									respF = *temp1 - temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") - (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								} else {
 									Radical* temp1 = dynamic_cast<Radical*>(numeros[resp4]);
 									Racional* temp2 = dynamic_cast<Racional*>(numeros[resp5]);
 									respF = *temp1 - temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") - (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								}
 							}
 						} else {
@@ -313,10 +398,30 @@ int main(){
 								Racional* temp1 = dynamic_cast<Racional*>(numeros[resp4]);
 								respF = *temp1 - num2;
 								cout << "La respuesta es: " << respF << endl;
+								archivo << cont;
+								archivo << ") (";
+								archivo << temp1;
+								archivo << ") - (";
+								archivo << num2;
+								archivo << ") = (";
+								archivo << respF;
+								archivo << ")";
+								archivo << endl;
+								cont++;
 							} else {
 								Radical* temp1 = dynamic_cast<Radical*>(numeros[resp4]);
 								respF = *temp1 - num2;
 								cout << "La respuesta es: " << respF << endl;
+								archivo << cont;
+								archivo << ") (";
+								archivo << temp1;
+								archivo << ") - (";
+								archivo << num2;
+								archivo << ") = (";
+								archivo << respF;
+								archivo << ")";
+								archivo << endl;
+								cont++;
 							}
 						}
 					} else if (resp2 == 3)
@@ -389,11 +494,31 @@ int main(){
 									Racional* temp2 = dynamic_cast<Racional*>(numeros[resp5]);
 									respF = *temp1 * temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") * (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								} else {
 									Racional* temp1 = dynamic_cast<Racional*>(numeros[resp4]);
 									Radical* temp2 = dynamic_cast<Radical*>(numeros[resp5]);
 									respF = *temp1 * temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") * (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								}
 							} else {
 								if (numeros[resp5] -> getTipo() == "Radical")
@@ -402,11 +527,31 @@ int main(){
 									Radical* temp2 = dynamic_cast<Radical*>(numeros[resp5]);
 									respF = *temp1 * temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") * (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								} else {
 									Radical* temp1 = dynamic_cast<Radical*>(numeros[resp4]);
 									Racional* temp2 = dynamic_cast<Racional*>(numeros[resp5]);
 									respF = *temp1 * temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") * (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								}
 							}
 						} else {
@@ -415,10 +560,30 @@ int main(){
 								Racional* temp1 = dynamic_cast<Racional*>(numeros[resp4]);
 								respF = *temp1 * num2;
 								cout << "La respuesta es: " << respF << endl;
+								archivo << cont;
+								archivo << ") (";
+								archivo << temp1;
+								archivo << ") * (";
+								archivo << num2;
+								archivo << ") = (";
+								archivo << respF;
+								archivo << ")";
+								archivo << endl;
+								cont++;
 							} else {
 								Radical* temp1 = dynamic_cast<Radical*>(numeros[resp4]);
 								respF = *temp1 * num2;
 								cout << "La respuesta es: " << respF << endl;
+								archivo << cont;
+								archivo << ") (";
+								archivo << temp1;
+								archivo << ") * (";
+								archivo << num2;
+								archivo << ") = (";
+								archivo << respF;
+								archivo << ")";
+								archivo << endl;
+								cont++;
 							}
 						}
 					} else if (resp2 == 4)
@@ -491,11 +656,31 @@ int main(){
 									Racional* temp2 = dynamic_cast<Racional*>(numeros[resp5]);
 									respF = *temp1 / temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") / (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								} else {
 									Racional* temp1 = dynamic_cast<Racional*>(numeros[resp4]);
 									Radical* temp2 = dynamic_cast<Radical*>(numeros[resp5]);
 									respF = *temp1 / temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") / (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								}
 							} else {
 								if (numeros[resp5] -> getTipo() == "Radical")
@@ -504,11 +689,31 @@ int main(){
 									Radical* temp2 = dynamic_cast<Radical*>(numeros[resp5]);
 									respF = *temp1 / temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") / (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								} else {
 									Radical* temp1 = dynamic_cast<Radical*>(numeros[resp4]);
 									Racional* temp2 = dynamic_cast<Racional*>(numeros[resp5]);
 									respF = *temp1 / temp2;
 									cout << "La respuesta es: " << respF << endl;
+									archivo << cont;
+									archivo << ") (";
+									archivo << temp1;
+									archivo << ") / (";
+									archivo << temp2;
+									archivo << ") = (";
+									archivo << respF;
+									archivo << ")";
+									archivo << endl;
+									cont++;
 								}
 							}
 						} else {
@@ -517,10 +722,30 @@ int main(){
 								Racional* temp1 = dynamic_cast<Racional*>(numeros[resp4]);
 								respF = *temp1 / num2;
 								cout << "La respuesta es: " << respF << endl;
+								archivo << cont;
+								archivo << ") (";
+								archivo << temp1;
+								archivo << ") / (";
+								archivo << num2;
+								archivo << ") = (";
+								archivo << respF;
+								archivo << ")";
+								archivo << endl;
+								cont++;
 							} else {
 								Radical* temp1 = dynamic_cast<Radical*>(numeros[resp4]);
 								respF = *temp1 / num2;
 								cout << "La respuesta es: " << respF << endl;
+								archivo << cont;
+								archivo << ") (";
+								archivo << temp1;
+								archivo << ") / (";
+								archivo << num2;
+								archivo << ") = (";
+								archivo << respF;
+								archivo << ")";
+								archivo << endl;
+								cont++;
 							}
 						}
 					} else {
