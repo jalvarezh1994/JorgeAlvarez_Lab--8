@@ -24,6 +24,12 @@ class Racional:public Real{
 
         string getTipo();
 
+        friend ostream& operator <<(ostream &escribir,Racional &r){
+            string texto="";
+            texto+=to_string(r.getNumerador())+'/'+to_string(r.getDenominador());
+            return escribir<<texto;
+        }
+
         string operator +(Racional &r1){
             int denominador=(r1.getDenominador())*(this->getDenominador());
             int numerador=(denominador/r1.getDenominador())*r1.getNumerador()+(denominador/this->getDenominador())*this->getNumerador();

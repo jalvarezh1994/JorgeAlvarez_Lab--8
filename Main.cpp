@@ -15,8 +15,14 @@ int main() {
 	//Racional d(3,4);
 	//a+b;
 	//cout<<c+5<<endl;
-	Radical a(5,2,8);
+	/*Radical a(5,2,8);
 	Radical b(10,7,8);
-	cout<<a/b<<endl;
+	cout<<a/b<<endl;*/
+	Radical a(1,2,3);
+	ofstream archivo;
+	archivo.open("prueba.txt",ios::app);
+	archivo<<a;
+	archivo<<endl;
+	archivo<<a;
 	return 0;
 }

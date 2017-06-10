@@ -28,6 +28,12 @@ class Radical:public Real{
 
         string getTipo();
 
+        friend ostream& operator <<(ostream &escribir,Radical &r){
+            string texto="";
+            texto+='('+to_string(r.getCoeficiente())+")("+to_string(r.getRadicando())+")^(1/"+to_string(r.getIndice())+')';
+            return escribir<<texto;
+        }
+
         string operator +(Radical &r1){
             string respuesta="";
             int indice,radicando,coeficiente;
@@ -76,8 +82,8 @@ class Radical:public Real{
                 respuesta+='('+to_string(this->getCoeficiente())+'/'+to_string(r1.getCoeficiente())+')'+
                 '('+to_string(this->getRadicando())+")^("+indice+')';
             }else{
-                respuesta+="(("+to_string(this->getCoeficiente)+")("+to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice())+"))"+'/'+
-                "(("+to_string(r1.getCoeficiente)+")("+to_string(r1.getRadicando())+")^(1/"+to_string(r1.getIndice())+"))";
+                respuesta+="(("+to_string(this->getCoeficiente())+")("+to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice())+"))"+'/'+
+                "(("+to_string(r1.getCoeficiente())+")("+to_string(r1.getRadicando())+")^(1/"+to_string(r1.getIndice())+"))";
             }
             return respuesta;
         }
