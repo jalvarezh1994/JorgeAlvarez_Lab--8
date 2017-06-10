@@ -108,7 +108,7 @@ class Radical:public Real{
 
         string operator /(double d){
             string respuesta="";
-            respuesta+='('+to_string((1/d)*this->getCoeficiente())+")("+to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice())+')'+'+'+to_string(d);
+            respuesta+='('+to_string((1/d)*this->getCoeficiente())+")("+to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice())+')';
             return respuesta;
         }
 };
