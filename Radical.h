@@ -87,6 +87,30 @@ class Radical:public Real{
             }
             return respuesta;
         }
+
+        string operator +(double d){
+            string respuesta="";
+            respuesta+='('+to_string(r.getCoeficiente())+")("+to_string(r.getRadicando())+")^(1/"+to_string(r.getIndice())+')'+'+'+to_string(d);
+            return respuesta;
+        }
+
+        string operator -(double d){
+            string respuesta="";
+            respuesta+='('+to_string(r.getCoeficiente())+")("+to_string(r.getRadicando())+")^(1/"+to_string(r.getIndice())+')'+'-'+to_string(d);
+            return respuesta;
+        }
+
+        string operator *(double d){
+            string respuesta="";
+            respuesta+='('+to_string(d*r.getCoeficiente())+")("+to_string(r.getRadicando())+")^(1/"+to_string(r.getIndice())+')';
+            return respuesta;
+        }
+
+        string operator +(double d){
+            string respuesta="";
+            respuesta+='('+to_string((1/d)*r.getCoeficiente())+")("+to_string(r.getRadicando())+")^(1/"+to_string(r.getIndice())+')'+'+'+to_string(d);
+            return respuesta;
+        }
 };
 
 #endif
