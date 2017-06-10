@@ -90,25 +90,25 @@ class Radical:public Real{
 
         string operator +(double d){
             string respuesta="";
-            respuesta+='('+to_string(r.getCoeficiente())+")("+to_string(r.getRadicando())+")^(1/"+to_string(r.getIndice())+')'+'+'+to_string(d);
+            respuesta+='('+to_string(this->getCoeficiente())+")("+to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice())+')'+'+'+to_string(d);
             return respuesta;
         }
 
         string operator -(double d){
             string respuesta="";
-            respuesta+='('+to_string(r.getCoeficiente())+")("+to_string(r.getRadicando())+")^(1/"+to_string(r.getIndice())+')'+'-'+to_string(d);
+            respuesta+='('+to_string(this->getCoeficiente())+")("+to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice())+')'+'-'+to_string(d);
             return respuesta;
         }
 
         string operator *(double d){
             string respuesta="";
-            respuesta+='('+to_string(d*r.getCoeficiente())+")("+to_string(r.getRadicando())+")^(1/"+to_string(r.getIndice())+')';
+            respuesta+='('+to_string(d*this->getCoeficiente())+")("+to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice())+')';
             return respuesta;
         }
 
         string operator /(double d){
             string respuesta="";
-            respuesta+='('+to_string((1/d)*r.getCoeficiente())+")("+to_string(r.getRadicando())+")^(1/"+to_string(r.getIndice())+')'+'+'+to_string(d);
+            respuesta+='('+to_string((1/d)*this->getCoeficiente())+")("+to_string(this->getRadicando())+")^(1/"+to_string(this->getIndice())+')'+'+'+to_string(d);
             return respuesta;
         }
 };

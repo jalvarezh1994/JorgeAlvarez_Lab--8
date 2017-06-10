@@ -122,7 +122,7 @@ class Racional:public Real{
         string operator /(Radical &r1){
             string resp="";
             int coeficienteT = Denominador * r1.getCoeficiente();
-            resp += to_string(Numerador) + " / (" + to_string(coeficienteT) + '(' + to_string(r1.getRadicando()) + ")^(1/" + to_string(r1.getIndice());
+            resp += to_string(Numerador) + " / (" + to_string(coeficienteT) + '(' + to_string(r1.getRadicando()) + ")^(1/" + to_string(r1.getIndice())+"))";
             return resp;
         }
 
