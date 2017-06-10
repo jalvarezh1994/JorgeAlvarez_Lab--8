@@ -10,7 +10,7 @@ using namespace std;
 
 int main(){
 	ofstream archivo;
-	archivo.open("operaciones.txt".c_str(),ios::app);
+	archivo.open("operaciones.txt",ios::app);
 	if (archivo.fail()){
 		cout<<"No se puede abrir el archivo";
 		exit(1);
@@ -133,6 +133,7 @@ int main(){
 							cout << "Opcion invalida! Ingrese su opcion de nuevo!"  <<  endl;
 							cin >> resp3;
 						}
+						int resp5;
 						if (resp3 == 1)
 						{
 							cout << "Escoga el segundo numero: " << endl;
@@ -147,7 +148,6 @@ int main(){
 									cout << i << ") (" << temp -> getCoeficiente() << ")(" << temp -> getRadicando() << ")^(1/" << temp -> getIndice() << ")" <<  endl;
 								}
 							}
-							int resp5;
 							cin >> resp5;
 							while (resp5 < 0 || resp5 > numeros.size()) {
 								cout << "Opcion invalida! Ingrese su opcion de nuevo!"  <<  endl;
